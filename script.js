@@ -33,3 +33,29 @@ function factorial(...nums) {
     return result;
   });
 }
+
+let operand1 = 0;
+let operand2 = 0;
+let operator = "";
+
+function operate(num1, oper, num2) {
+  if (oper === "+") {
+    return add(num1, num2);
+  } else if (oper === "-") {
+    return subtract(num1, num2);
+  } else if (oper === "*") {
+    return multiply(num1, num2);
+  } else if (oper === "/") {
+    return divide(num1, num2);
+  }
+}
+
+// const buttonsBody = document.querySelector(".body");
+
+// function generateButtons() {
+//   for (let i = 0; i < 20; i++) {
+//     let button = document.createElement("button");
+//     buttonsBody.appendChild(button);
+//   }
+// }
+// generateButtons();

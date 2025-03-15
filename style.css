@@ -1,0 +1,92 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.calculator-body {
+  height: 500px;
+  width: 350px;
+  border: 1px solid black;
+  border-radius: 40px;
+  background-color: #92cfc8;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: space-around;
+  align-items: center;
+}
+.screen {
+  height: 80px;
+  width: 300px;
+  background-color: #b0b29f;
+  /* margin: 35px 25px 0px; */
+  box-sizing: border-box;
+  border-radius: 5px;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+p {
+  padding: 5px 10px;
+  font-size: xx-large;
+}
+.body {
+  height: 300px;
+  width: 300px;
+  /* border: 1px solid black; */
+  box-sizing: border-box;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+button {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  background-color: #80a4a0;
+  color: white;
+  font-weight: bold;
+}
+.all-clear {
+  background-color: #cf9293;
+}
+.clear {
+  background-color: #c9c3c3;
+}
+.compute {
+  background-color: #9bc0c6;
+}
+.percentage,
+.add,
+.subtract,
+.divide,
+.multiply {
+  background-color: #b5d19f;
+}
+.top-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.all-clear,
+.percentage,
+.add,
+.subtract,
+.divide,
+.multiply,
+.compute {
+  height: 65px;
+  width: 65px;
+}
