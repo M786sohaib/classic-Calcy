@@ -67,3 +67,28 @@ allOperators.forEach((button) => {
     }
   });
 });
+
+operate(num1, oper, num2){
+  switch(oper){
+    case "+":
+
+     result += add(num1,num2);
+     break;
+
+     case "-":
+      result += subtract(num1, num2);
+      break;
+
+      case"x":
+      result += multiply(num1, num2);
+      break;
+
+      case "÷":
+        result += divide(num1, num2);
+        break;
+        
+        case "%":
+          result += percentage(num1);
+          break;
+  }
+}
