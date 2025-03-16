@@ -77,20 +77,20 @@ button:active {
   background-color: #6e8f8b; /* Slightly darker */
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Reduces shadow for press effect */
 }
-.all-clear {
+#all-clear {
   background-color: #cf9293;
 }
-.clear {
+#clear {
   background-color: #c9c3c3;
 }
-.compute {
+#compute {
   background-color: #9bc0c6;
 }
-.percentage,
-.add,
-.subtract,
-.divide,
-.multiply {
+#percentage,
+#add,
+#subtract,
+#divide,
+#multiply {
   background-color: #b5d19f;
 }
 .top-buttons {
@@ -99,13 +99,13 @@ button:active {
   justify-content: space-between;
   align-items: center;
 }
-.all-clear,
-.percentage,
-.add,
-.subtract,
-.divide,
-.multiply,
-.compute {
+#all-clear,
+#percentage,
+#add,
+#subtract,
+#divide,
+#multiply,
+#compute {
   height: 65px;
   width: 65px;
 }

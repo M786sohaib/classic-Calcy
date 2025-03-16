@@ -78,11 +78,13 @@ buttons.addEventListener("click", (event) => {
     }
   } else if (["+", "-", "%", "*", "/"].includes(button.value)) {
     if (output.textContent === "0") return;
-    else if (/\d$/.test(output.textContent)) {
+    else if (/\d$|/.test(output.textContent)) {
       output.textContent += button.textContent;
     }
   } else if (button.value === "=") {
-    let expression = output.textContent.split("").join(",");
+    console.log(output.textContent);
+    let expression = output.textContent.match(/(\d*\.?\d+|[x÷+\-*%/])/g);
+    console.log(expression);
     let result = compute(expression);
     output.textContent = "";
     console.log(result);
@@ -96,37 +98,34 @@ buttons.addEventListener("click", (event) => {
 });
 
 function compute(value) {
-  let expression = value.replace(/x/g, "*").replace(/÷/g, "/");
-
-  let formattedExpression = expression.split(",");
-  console.log(formattedExpression);
+  let formattedExpression = value;
   let sum = 0;
   if (formattedExpression.includes("+")) {
-    let para = [...formattedExpression];
+    let para = formattedExpression;
     para.splice(1, 1);
     let numericPara = para.map((item) => +item);
     console.log(numericPara);
     sum += add(numericPara);
   } else if (formattedExpression.includes("-")) {
-    let para = [...formattedExpression];
+    let para = formattedExpression;
     para.splice(1, 1);
     let numericPara = para.map((item) => +item);
     console.log(numericPara);
     sum += subtract(numericPara);
-  } else if (formattedExpression.includes("*")) {
-    let para = [...formattedExpression];
+  } else if (formattedExpression.includes("x")) {
+    let para = formattedExpression;
     para.splice(1, 1);
     let numericPara = para.map((item) => +item);
     console.log(numericPara);
     sum += multiply(numericPara);
-  } else if (formattedExpression.includes("/")) {
-    let para = [...formattedExpression];
+  } else if (formattedExpression.includes("÷")) {
+    let para = formattedExpression;
     para.splice(1, 1);
     let numericPara = para.map((item) => +item);
     console.log(numericPara);
     sum += divide(numericPara);
   } else if (formattedExpression.includes("%")) {
-    let para = [...formattedExpression];
+    let para = formattedExpression;
     para.splice(1, 1);
     let numericPara = para.map((item) => +item);
     console.log(numericPara);
