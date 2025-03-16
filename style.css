@@ -15,7 +15,7 @@ body {
 .calculator-body {
   height: 500px;
   width: 350px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 40px;
   background-color: #92cfc8;
   display: flex;
@@ -24,20 +24,30 @@ body {
   justify-content: space-around;
   align-items: center;
 }
+
 .screen {
   height: 80px;
   width: 300px;
   background-color: #b0b29f;
-  /* margin: 35px 25px 0px; */
+  padding: 10px;
+  overflow: auto; /* Allow scrolling if text overflows */
   box-sizing: border-box;
   border-radius: 5px;
   display: flex;
   justify-content: end;
-  align-items: end;
+  align-items: center;
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.3),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.7);
 }
+
 p {
   padding: 5px 10px;
-  font-size: xx-large;
+  font-size: 3vw; /* Font size relative to viewport width */
+  flex-shrink: 1; /* Allows text to shrink if needed */
+  margin: 0;
+  white-space: normal; /* Allow text to wrap */
+  overflow: hidden; /* Hide anything that goes outside the element */
+  text-overflow: ellipsis; /* Add an ellipsis if text overflows */
 }
 .body {
   height: 300px;
@@ -57,6 +67,15 @@ button {
   background-color: #80a4a0;
   color: white;
   font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.1s, background-color 0.1s;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+button:active {
+  transform: scale(0.9); /* Shrinks slightly */
+  background-color: #6e8f8b; /* Slightly darker */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Reduces shadow for press effect */
 }
 .all-clear {
   background-color: #cf9293;
