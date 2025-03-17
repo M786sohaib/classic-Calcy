@@ -70,6 +70,9 @@ buttons.forEach((button) => {
           operator = buttonContent;
           if (operator === "%") {
             operate(firstOperand, operator);
+            firstOperand = result;
+            display.textContent = result;
+            operator = "";
           }
           display.textContent += buttonContent;
         } else if (secondOperand) {
