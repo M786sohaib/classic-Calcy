@@ -1,3 +1,8 @@
+//features to be added later -
+// 1. keyboard support
+// 2. dark mode
+// 3. history tracking
+
 // functions for calculations
 
 const add = (a, b) => a + b;
@@ -42,6 +47,8 @@ const display = document.querySelector(".screen > p");
 display.textContent = "0";
 
 const buttons = document.querySelectorAll(".button");
+
+//EventListeners to update the display; operator and operand variables.
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {

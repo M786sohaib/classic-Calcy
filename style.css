@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Digital-7&display=swap");
+
 *,
 *::after,
 *::before {
@@ -48,6 +50,8 @@ p {
   white-space: normal; /* Allow text to wrap */
   overflow: hidden; /* Hide anything that goes outside the element */
   text-overflow: ellipsis; /* Add an ellipsis if text overflows */
+  font-family: "Digital-7", sans-serif;
+  font-weight: normal;
 }
 .body {
   height: 300px;
