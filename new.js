@@ -59,8 +59,13 @@ allOperators.forEach((button) => {
         break;
       default:
         if (/\d$/.test(display.textContent)) {
+          firstOperand = display.textContent; //adds the first operator to variable after a operator is clicked.
+          operator = buttonContent; // adds the operator clicked to the variable.
+          console.log(firstOperand);
+          console.log(operator);
           if (/[+\-x%÷]/.test(display.textContent)) {
-            operate();
+            secondOperand = display.textContent.replace(/.*[+\-x%÷]/, "");
+            operate(firstOperand, operator, secondOperand);
           } // if an operator already exist then run calculation first.
           display.textContent += buttonContent; //if a number preceeds then add operator to screen.
         }
@@ -68,27 +73,29 @@ allOperators.forEach((button) => {
   });
 });
 
-operate(num1, oper, num2){
-  switch(oper){
+const operate = (value1, oper, value2) => {
+  let num1 = +value1;
+  let num2 = +value2;
+
+  switch (oper) {
     case "+":
+      result += add(num1, num2);
+      break;
 
-     result += add(num1,num2);
-     break;
-
-     case "-":
+    case "-":
       result += subtract(num1, num2);
       break;
 
-      case"x":
+    case "x":
       result += multiply(num1, num2);
       break;
 
-      case "÷":
-        result += divide(num1, num2);
-        break;
-        
-        case "%":
-          result += percentage(num1);
-          break;
+    case "÷":
+      result += divide(num1, num2);
+      break;
+
+    case "%":
+      result += percentage(num1);
+      break;
   }
-}
+};
