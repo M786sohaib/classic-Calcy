@@ -87,7 +87,8 @@ buttons.forEach((button) => {
           firstOperand = result;
           secondOperand = ""; // Reset for the next input
           display.textContent = result;
-          operator = ""; // Update operator for the next operation
+          operator = buttonContent; // Update operator for the next operation
+          display.textContent += buttonContent;
         }
 
         break;
